@@ -11,14 +11,14 @@ import senacdw.gabriel.henrique.model.entity.Produto;
 import senacdw.gabriel.henrique.service.ProdutoService;
 
 @RestController
-@RequestMapping(path = "/")
+@RequestMapping(path = "/api/produtos")
 public class Controller {
 	
 	@Autowired
 	private ProdutoService produtoService;
 	
 	@GetMapping
-	public List<Produto> index(){
+	public List<Produto> consultarTodos(){
 		return produtoService.buscaTodos();
 	}
 	
