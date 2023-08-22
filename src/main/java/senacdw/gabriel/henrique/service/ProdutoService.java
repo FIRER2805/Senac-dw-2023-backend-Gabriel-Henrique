@@ -13,15 +13,34 @@ import senacdw.gabriel.henrique.model.repository.ProdutoRepository;
 public class ProdutoService {
 	@Autowired
 	private ProdutoRepository produtoRepository;
-	
+
 	@Transactional
-	public List<Produto> buscaTodos()
+	public List<Produto> buscaTodos() 
 	{
 		return produtoRepository.findAll();
 	}
-	
-	public Produto consultarPorId(long id)
+
+	@Transactional
+	public Produto consultarPorId(long id) 
 	{
-		return produtoRepository.getReferenceById(id);
+		return produtoRepository.findById(id).get();
+	}
+
+	@Transactional
+	public Produto inserir(Produto produto) 
+	{
+		return produtoRepository.save(produto);
+	}
+
+	@Transactional
+	public Produto atualizar(Produto produto) 
+	{
+		return produtoRepository.save(produto);
+	}
+	
+	@Transactional
+	public void deletar(Produto produto)
+	{
+		produtoRepository.delete(produto);
 	}
 }
