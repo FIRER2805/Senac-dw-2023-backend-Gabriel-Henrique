@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,22 +19,25 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private String id_fabricante;
+	@ManyToOne
+	@JoinColumn(name = "id_fabricante")
+	private Fabricante fabricanteDoProduto;
 	private Double valor;
 	private Double peso;
 	@Column(name="data_cadastro")
 	private LocalDate dataCadastro;
 	
-	public Produto(Integer id, String nome, String fabricante, Double valor, Double peso, LocalDate dataCadastro) {
+	public Produto(Integer id, String nome, senacdw.gabriel.henrique.model.entity.Fabricante fabricanteDoProduto,
+			Double valor, Double peso, LocalDate dataCadastro) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.id_fabricante = fabricante;
+		this.fabricanteDoProduto = fabricanteDoProduto;
 		this.valor = valor;
 		this.peso = peso;
 		this.dataCadastro = dataCadastro;
 	}
-	
+
 	public Produto() {
 		super();
 	}
@@ -48,12 +53,6 @@ public class Produto {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public String getFabricante() {
-		return id_fabricante;
-	}
-	public void setFabricante(String fabricante) {
-		this.id_fabricante = fabricante;
 	}
 	public Double getValor() {
 		return valor;
@@ -72,5 +71,17 @@ public class Produto {
 	}
 	public void setDataCadastro(LocalDate dataCadastro) {
 		this.dataCadastro = dataCadastro;
+	}
+
+
+
+	public Fabricante getFabricanteDoProduto() {
+		return fabricanteDoProduto;
+	}
+
+
+
+	public void setFabricanteDoProduto(Fabricante fabricanteDoProduto) {
+		this.fabricanteDoProduto = fabricanteDoProduto;
 	}
 }

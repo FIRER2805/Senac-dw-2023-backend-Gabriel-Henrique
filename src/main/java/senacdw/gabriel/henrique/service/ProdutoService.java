@@ -23,6 +23,7 @@ public class ProdutoService {
 		return produtoRepository.findAll();
 	}
 	
+	
 	public List<Produto> comFiltro(ProdutoSeletor seletor)
 	{
 		Specification<Produto> specification = ProdutoSpecification.comFiltros(seletor);

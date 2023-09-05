@@ -9,6 +9,7 @@ public class ProdutoSeletor {
 	private Double pesoMaximo;
 	private LocalDateTime dataCadastroInicial;
 	private LocalDateTime dataCadastroMaximo;
+	private String cnpjFabricante;
 	
 	public String getNome() {
 		return nome;
@@ -45,5 +46,11 @@ public class ProdutoSeletor {
 	}
 	public void setDataCadastroMaximo(LocalDateTime dataCadastroMaximo) {
 		this.dataCadastroMaximo = dataCadastroMaximo;
+	}
+	public String getCnpjFabricante() {
+		return cnpjFabricante;
+	}
+	public void setCnpjFabricante(String cnpjFabricante) {
+		this.cnpjFabricante = cnpjFabricante;
 	}
 }

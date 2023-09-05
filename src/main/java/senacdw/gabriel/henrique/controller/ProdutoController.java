@@ -18,7 +18,7 @@ import senacdw.gabriel.henrique.service.ProdutoService;
 
 @RestController
 @RequestMapping(path = "/api/produtos")
-public class Controller {
+public class ProdutoController {
 
 	@Autowired
 	private ProdutoService produtoService;
@@ -29,7 +29,7 @@ public class Controller {
 		return produtoService.buscaTodos();
 	}
 	
-	@GetMapping("/comFiltro")
+	@PostMapping("/comFiltro")
 	public List<Produto> comFiltro(@RequestBody ProdutoSeletor seletor)
 	{
 		return produtoService.comFiltro(seletor);

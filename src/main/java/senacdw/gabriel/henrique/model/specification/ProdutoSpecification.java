@@ -24,8 +24,11 @@ public class ProdutoSpecification {
 			if(seletor.getValorMaximo() != null)
 				predicates.add(cb.lessThanOrEqualTo(root.get("valor"), seletor.getValorMaximo()));
 			
+			//WHERE f.cnpj = '123456789...'
+			if(seletor.getCnpjFabricante() != null)
+				predicates.add(cb.equal(root.join("fabricanteDoProduto").get("cnpj"), seletor.getCnpjFabricante()));
+			
 			return cb.and(predicates.toArray(new Predicate[0]));
 		};
 	}
-
 }
