@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import senacdw.gabriel.henrique.model.entity.Produto;
+import senacdw.gabriel.henrique.model.seletor.ProdutoSeletor;
 import senacdw.gabriel.henrique.service.ProdutoService;
 
 @RestController
@@ -23,9 +24,15 @@ public class Controller {
 	private ProdutoService produtoService;
 
 	@GetMapping
-	public List<Produto> consultarTodos() 
+	public List<Produto> consultarTodos()
 	{
 		return produtoService.buscaTodos();
+	}
+	
+	@GetMapping("/comFiltro")
+	public List<Produto> comFiltro(@RequestBody ProdutoSeletor seletor)
+	{
+		return produtoService.comFiltro(seletor);
 	}
 
 	@GetMapping("/{id}")

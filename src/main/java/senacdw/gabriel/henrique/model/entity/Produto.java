@@ -10,14 +10,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="produto")
+@Table(name="produtos")
 public class Produto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
-	private String fabricante;
+	private String id_fabricante;
 	private Double valor;
 	private Double peso;
 	@Column(name="data_cadastro")
@@ -27,7 +27,7 @@ public class Produto {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.fabricante = fabricante;
+		this.id_fabricante = fabricante;
 		this.valor = valor;
 		this.peso = peso;
 		this.dataCadastro = dataCadastro;
@@ -50,10 +50,10 @@ public class Produto {
 		this.nome = nome;
 	}
 	public String getFabricante() {
-		return fabricante;
+		return id_fabricante;
 	}
 	public void setFabricante(String fabricante) {
-		this.fabricante = fabricante;
+		this.id_fabricante = fabricante;
 	}
 	public Double getValor() {
 		return valor;
