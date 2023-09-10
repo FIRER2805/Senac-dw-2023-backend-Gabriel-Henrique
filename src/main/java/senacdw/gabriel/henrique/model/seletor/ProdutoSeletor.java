@@ -1,14 +1,14 @@
 package senacdw.gabriel.henrique.model.seletor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class ProdutoSeletor {
 	private String nome;
 	private Double valorMaximo;
 	private Double pesoInicial;
 	private Double pesoMaximo;
-	private LocalDateTime dataCadastroInicial;
-	private LocalDateTime dataCadastroMaximo;
+	private LocalDate dataCadastroInicial;
+	private LocalDate dataCadastroMaximo;
 	private String cnpjFabricante;
 	
 	public String getNome() {
@@ -35,16 +35,16 @@ public class ProdutoSeletor {
 	public void setPesoMaximo(Double pesoMaximo) {
 		this.pesoMaximo = pesoMaximo;
 	}
-	public LocalDateTime getDataCadastroInicial() {
+	public LocalDate getDataCadastroInicial() {
 		return dataCadastroInicial;
 	}
-	public void setDataCadastroInicial(LocalDateTime dataCadastroInicial) {
+	public void setDataCadastroInicial(LocalDate dataCadastroInicial) {
 		this.dataCadastroInicial = dataCadastroInicial;
 	}
-	public LocalDateTime getDataCadastroMaximo() {
+	public LocalDate getDataCadastroMaximo() {
 		return dataCadastroMaximo;
 	}
-	public void setDataCadastroMaximo(LocalDateTime dataCadastroMaximo) {
+	public void setDataCadastroMaximo(LocalDate dataCadastroMaximo) {
 		this.dataCadastroMaximo = dataCadastroMaximo;
 	}
 	public String getCnpjFabricante() {

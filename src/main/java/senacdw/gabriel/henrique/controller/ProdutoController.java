@@ -19,7 +19,7 @@ import senacdw.gabriel.henrique.service.ProdutoService;
 
 @RestController
 @RequestMapping(path = "/api/produtos")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:5500"}, maxAge = 3600)
+@CrossOrigin(origins = {"http://localhost:4200", "http://127.0.0.1:5500"}, maxAge = 3600)
 public class ProdutoController {
 
 	@Autowired
