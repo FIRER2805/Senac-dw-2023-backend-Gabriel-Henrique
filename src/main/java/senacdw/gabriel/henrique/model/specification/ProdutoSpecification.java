@@ -28,6 +28,9 @@ public class ProdutoSpecification {
 			if(seletor.getCnpjFabricante() != null)
 				predicates.add(cb.equal(root.join("fabricanteDoProduto").get("cnpj"), seletor.getCnpjFabricante()));
 			
+			if(seletor.getDataCadastroInicial() != null && seletor.getDataCadastroMaximo() != null)
+				predicates.add(cb.between(root.get("dataCadastro"), seletor.getDataCadastroInicial(), seletor.getDataCadastroMaximo()));
+			
 			return cb.and(predicates.toArray(new Predicate[0]));
 		};
 	}
