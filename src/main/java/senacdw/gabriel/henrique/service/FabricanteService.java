@@ -17,5 +17,9 @@ public class FabricanteService {
 	public List<Fabricante> buscarTodos() {
 		return fabricanteRepository.findAll();
 	}
+	
+	public Fabricante inserir(Fabricante fabricante) {
+		return fabricanteRepository.save(fabricante);
+	}
 
 }

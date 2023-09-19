@@ -25,7 +25,7 @@ public class ProdutoSpecification {
 				predicates.add(cb.lessThanOrEqualTo(root.get("valor"), seletor.getValorMaximo()));
 			
 			//WHERE f.cnpj = '123456789...'
-			if(seletor.getCnpjFabricante() != null)
+			if(seletor.getCnpjFabricante() != null && !seletor.getCnpjFabricante().isBlank())
 				predicates.add(cb.equal(root.join("fabricanteDoProduto").get("cnpj"), seletor.getCnpjFabricante()));
 			
 			if(seletor.getDataCadastroInicial() != null && seletor.getDataCadastroMaximo() != null)
